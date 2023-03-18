@@ -84,8 +84,10 @@ public class ContentFrame extends JFrame implements ActionListener
                 picture = new URL(urlPath.getText());
                 newImage = ImageIO.read(picture);
             } catch (IOException ex) {
+                errors.setText("Error!");
                 throw new RuntimeException(ex);
             }
+            errors.setText("");
             imagePanel.setImage(newImage);
             imagePanel.repaint();
         }
